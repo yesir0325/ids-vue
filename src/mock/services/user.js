@@ -533,6 +533,17 @@ const userNav = options => {
       component: 'RouteView'
     },
     {
+      name: 'form1',
+      parentId: 0,
+      id: 10,
+      meta: {
+        icon: 'form',
+        title: 'menu.form'
+      },
+      redirect: '/form1/base-form',
+      component: 'RouteView'
+    },
+    {
       name: 'basic-form',
       parentId: 10,
       id: 6,

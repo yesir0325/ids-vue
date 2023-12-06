@@ -7,12 +7,6 @@
       :form="form"
       @submit="handleSubmit"
     >
-      <a-tabs
-        :activeKey="customActiveKey"
-        :tabBarStyle="{ textAlign: 'center', borderBottom: 'unset' }"
-        @change="handleTabClick"
-      >
-        <a-tab-pane key="tab1" :tab="$t('user.login.tab-login-credentials')">
           <a-alert v-if="isLoginError" type="error" showIcon style="margin-bottom: 24px;" :message="$t('user.login.message-invalid-credentials')" />
           <a-form-item>
             <a-input
@@ -40,35 +34,6 @@
               <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }"/>
             </a-input-password>
           </a-form-item>
-        </a-tab-pane>
-        <!-- <a-tab-pane key="tab2" :tab="$t('user.login.tab-login-mobile')">
-          <a-form-item>
-            <a-input size="large" type="text" :placeholder="$t('user.login.mobile.placeholder')" v-decorator="['mobile', {rules: [{ required: true, pattern: /^1[34578]\d{9}$/, message: $t('user.login.mobile.placeholder') }], validateTrigger: 'change'}]">
-              <a-icon slot="prefix" type="mobile" :style="{ color: 'rgba(0,0,0,.25)' }"/>
-            </a-input>
-          </a-form-item>
-
-          <a-row :gutter="16">
-            <a-col class="gutter-row" :span="16">
-              <a-form-item>
-                <a-input size="large" type="text" :placeholder="$t('user.login.mobile.verification-code.placeholder')" v-decorator="['captcha', {rules: [{ required: true, message: $t('user.verification-code.required') }], validateTrigger: 'blur'}]">
-                  <a-icon slot="prefix" type="mail" :style="{ color: 'rgba(0,0,0,.25)' }"/>
-                </a-input>
-              </a-form-item>
-            </a-col>
-            <a-col class="gutter-row" :span="8">
-              <a-button
-                class="getCaptcha"
-                tabindex="-1"
-                :disabled="state.smsSendBtn"
-                @click.stop.prevent="getCaptcha"
-                v-text="!state.smsSendBtn && $t('user.register.get-verification-code') || (state.time+' s')"
-              ></a-button>
-            </a-col>
-          </a-row>
-        </a-tab-pane> -->
-      </a-tabs>
-
       <a-form-item>
         <a-checkbox v-decorator="['rememberMe', { valuePropName: 'checked' }]">{{ $t('user.login.remember-me') }}</a-checkbox>
         <router-link
@@ -156,22 +121,17 @@ export default {
       }
       callback()
     },
-    handleTabClick (key) {
-      this.customActiveKey = key
-      // this.form.resetFields()
-    },
     handleSubmit (e) {
       e.preventDefault()
       const {
         form: { validateFields },
         state,
-        customActiveKey,
         Login
       } = this
 
       state.loginBtn = true
 
-      const validateFieldsKey = customActiveKey === 'tab1' ? ['username', 'password'] : ['mobile', 'captcha']
+      const validateFieldsKey = ['username', 'password']
 
       validateFields(validateFieldsKey, { force: true }, (err, values) => {
         if (!err) {

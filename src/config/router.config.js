@@ -13,7 +13,7 @@ export const asyncRouterMap = [
     name: 'index',
     component: BasicLayout,
     meta: { title: 'menu.home' },
-    redirect: '/dashboard/workplace',
+    redirect: '/dashboard/analysis',
     children: [
       // dashboard
       {
@@ -70,6 +70,29 @@ export const asyncRouterMap = [
           }
         ]
       },
+      // demo
+      {
+        path: '/new-router',
+        name: 'newRouter',
+        redirect: '/new-router/ahaha',
+        component: RouteView,
+        meta: { title: 'demo', keepAlive: true, permission: [ 'dashboard' ] },
+        children: [
+          {
+            path: '/new-router/ahaha',
+            name: 'ahaha',
+            component: () => import('@/views/demo/404'),
+            meta: { title: '404', keepAlive: true, permission: ['form'] }
+          },
+        {
+          path: '/new-router/ahaha1',
+          name: 'ahaha1',
+          component: () => import('@/views/demo/403'),
+          meta: { title: '403', keepAlive: true, permission: ['form'] }
+        }
+      ]
+    },
+
       // list
       {
         path: '/list',

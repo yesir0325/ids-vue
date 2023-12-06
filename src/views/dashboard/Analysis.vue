@@ -242,7 +242,7 @@ for (let i = 0; i < 12; i += 1) {
 const rankList = []
 for (let i = 0; i < 7; i++) {
   rankList.push({
-    name: '白鹭岛 ' + (i + 1) + ' 号店',
+    name: '123.15.36.12 ' + (i + 1) + 'ip',
     total: 1234.56 - i * 100
   })
 }
