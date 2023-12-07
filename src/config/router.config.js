@@ -70,29 +70,6 @@ export const asyncRouterMap = [
           }
         ]
       },
-      // demo
-      {
-        path: '/new-router',
-        name: 'newRouter',
-        redirect: '/new-router/ahaha',
-        component: RouteView,
-        meta: { title: 'demo', keepAlive: true, permission: [ 'dashboard' ] },
-        children: [
-          {
-            path: '/new-router/ahaha',
-            name: 'ahaha',
-            component: () => import('@/views/demo/404'),
-            meta: { title: '404', keepAlive: true, permission: ['form'] }
-          },
-        {
-          path: '/new-router/ahaha1',
-          name: 'ahaha1',
-          component: () => import('@/views/demo/403'),
-          meta: { title: '403', keepAlive: true, permission: ['form'] }
-        }
-      ]
-    },
-
       // list
       {
         path: '/list',
@@ -290,8 +267,249 @@ export const asyncRouterMap = [
             ]
           }
         ]
+      },
+      // 实时监控
+      {
+        path: '/real-time-monitoring',
+        name: 'real-time-monitoring',
+        redirect: '/real-time-monitoring/test1',
+        component: RouteView,
+        meta: { title: '实时监控', keepAlive: true, permission: [ 'dashboard' ] },
+        children: [
+          {
+            path: '/real-time-monitoring/test1',
+            name: 'real-time-monitoring1',
+            component: () => import('@/views/real-time-monitoring/test1'),
+            meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+          },
+        {
+          path: '/real-time-monitoring/test2',
+          name: 'real-time-monitoring2',
+          component: () => import('@/views/real-time-monitoring/test2'),
+          meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+        }
+      ]
+    },
+    // 攻击事件
+    {
+      path: '/attack-events',
+      name: 'attack-events',
+      redirect: '/attack-events/test1',
+      component: RouteView,
+      meta: { title: '攻击事件', keepAlive: true, permission: [ 'dashboard' ] },
+      children: [
+        {
+          path: '/attack-events/test1',
+          name: 'attack-events1',
+          component: () => import('@/views/attack-events/test1'),
+          meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+        },
+      {
+        path: '/attack-events/test2',
+        name: 'attack-events2',
+        component: () => import('@/views/attack-events/test2'),
+        meta: { title: 'test2', keepAlive: true, permission: ['form'] }
       }
-
+    ]
+  },
+  // 警报日志
+  {
+    path: '/alert-logs',
+    name: 'alert-logs',
+    redirect: '/alert-logs/test1',
+    component: RouteView,
+    meta: { title: '警报日志', keepAlive: true, permission: [ 'dashboard' ] },
+    children: [
+      {
+        path: '/alert-logs/test1',
+        name: 'alert-logs1',
+        component: () => import('@/views/alert-logs/test1'),
+        meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+      },
+    {
+      path: '/alert-logs/test2',
+      name: 'alert-logs2',
+      component: () => import('@/views/alert-logs/test2'),
+      meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+    }
+  ]
+},
+// 流量分析
+{
+  path: '/traffic-analysis',
+  name: 'traffic-analysis',
+  redirect: '/traffic-analysis/test1',
+  component: RouteView,
+  meta: { title: '流量分析', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/traffic-analysis/test1',
+      name: 'traffic-analysis1',
+      component: () => import('@/views/traffic-analysis/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/traffic-analysis/test2',
+    name: 'traffic-analysis2',
+    component: () => import('@/views/traffic-analysis/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+},
+// 规则管理
+{
+  path: '/rule-management',
+  name: 'rule-management',
+  redirect: '/rule-management/test1',
+  component: RouteView,
+  meta: { title: '规则管理', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/rule-management/test1',
+      name: 'rule-management1',
+      component: () => import('@/views/rule-management/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/rule-management/test2',
+    name: 'rule-management2',
+    component: () => import('@/views/rule-management/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+},
+// 用户管理
+{
+  path: '/user-management',
+  name: 'user-management',
+  redirect: '/user-management/test1',
+  component: RouteView,
+  meta: { title: '用户管理', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/user-management/test1',
+      name: 'management1',
+      component: () => import('@/views/user-management/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/user-management/test2',
+    name: 'management2',
+    component: () => import('@/views/user-management/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+},
+// 报告与分析
+{
+  path: '/reports-and-analysis',
+  name: 'reports-and-analysis',
+  redirect: '/reports-and-analysis/test1',
+  component: RouteView,
+  meta: { title: '报告与分析', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/reports-and-analysis/test1',
+      name: 'reports-and-analysis1',
+      component: () => import('@/views/reports-and-analysis/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/reports-and-analysis/test2',
+    name: 'reports-and-analysis2',
+    component: () => import('@/views/reports-and-analysis/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+},
+// 安全事件响应
+{
+  path: '/security-event-response',
+  name: 'security-event-response',
+  redirect: '/security-event-response/test1',
+  component: RouteView,
+  meta: { title: '安全事件响应', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/security-event-response/test1',
+      name: 'security-event-response1',
+      component: () => import('@/views/security-event-response/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/security-event-response/test2',
+    name: 'security-event-response2',
+    component: () => import('@/views/security-event-response/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+},
+// 系统配置
+{
+  path: '/system-configuration',
+  name: 'system-configuration',
+  redirect: '/system-configuration/test1',
+  component: RouteView,
+  meta: { title: '系统配置', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/system-configuration/test1',
+      name: 'system-configuration1',
+      component: () => import('@/views/system-configuration/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/system-configuration/test2',
+    name: 'system-configuration2',
+    component: () => import('@/views/system-configuration/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+},
+// 通知与警报设置
+{
+  path: '/notification-and-alert-settings',
+  name: 'notification-and-alert-settings',
+  redirect: '/notification-and-alert-settings/test1',
+  component: RouteView,
+  meta: { title: '通知与警报设置', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/notification-and-alert-settings/test1',
+      name: 'notification-and-alert-settings1',
+      component: () => import('@/views/notification-and-alert-settings/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/notification-and-alert-settings/test2',
+    name: 'notification-and-alert-settings2',
+    component: () => import('@/views/notification-and-alert-settings/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+},
+// 帮助与支持
+{
+  path: '/help-and-support',
+  name: 'help-and-support',
+  redirect: '/help-and-support/test1',
+  component: RouteView,
+  meta: { title: '帮助与支持', keepAlive: true, permission: [ 'dashboard' ] },
+  children: [
+    {
+      path: '/help-and-support/test1',
+      name: 'help-and-support1',
+      component: () => import('@/views/help-and-support/test1'),
+      meta: { title: 'test1', keepAlive: true, permission: ['form'] }
+    },
+  {
+    path: '/help-and-support/test2',
+    name: 'help-and-support2',
+    component: () => import('@/views/help-and-support/test2'),
+    meta: { title: 'test2', keepAlive: true, permission: ['form'] }
+  }
+]
+}
       // other
       /*
       {
