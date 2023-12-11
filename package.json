@@ -17,6 +17,7 @@
     "@amap/amap-vue": "^2.0.13",
     "@ant-design-vue/pro-layout": "^1.0.12",
     "@antv/data-set": "^0.10.2",
+    "@antv/g2plot": "^2.4.31",
     "ant-design-vue": "^1.7.8",
     "axios": "^0.26.1",
     "babel-loader": "8",
