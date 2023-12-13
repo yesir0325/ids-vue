@@ -35,8 +35,8 @@
           stroke-color="#409EFF"
           stroke-weight="8"
           cursor="default"
-          :editable="false"
-          :draggable="false"
+          :editable="true"
+          :draggable="true"
         />
       </amap>
     </div>
